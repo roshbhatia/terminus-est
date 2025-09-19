@@ -129,7 +129,12 @@
   ],
   [
     {
-      "x": 5.25
+      "x": 1
+    },
+    "Shift",
+    "Shift",
+    {
+      "x": 2.25
     },
     "Space",
     "Space",
@@ -139,7 +144,12 @@
     },
     "Space",
     "Space",
-    "Space"
+    "Space",
+    {
+      "x": 2.25
+    },
+    "Enter",
+    "Enter"
   ],
   [
     {
