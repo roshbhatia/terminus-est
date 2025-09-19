@@ -26,7 +26,7 @@
 /* number of backlight levels */
 
 #ifdef BACKLIGHT_PIN
-#define BACKLIGHT_LEVELS 3
+#define BACKLIGHT_LEVELS 0
 #endif
 
 /* Set 0 if debouncing isn't needed */
