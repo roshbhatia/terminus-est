@@ -16,5 +16,6 @@ I've tended to cluster my actions around vim-inpsired keybindings with discrete 
 - Additional `<Esc>` and `<Space>` placements for additional ease-of-use.
 
 ## Built With...
-- https://keyboard-layout-editor.com
-- https://kbfirmware.com
+- https://keyboard-layout-editor.com (used for `./layout`)
+- https://kbplate.ai03.com (used for ./plate)
+- https://kbfirmware.com 
