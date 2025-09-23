@@ -1,1 +1,19 @@
 .task/
+
+# KiCad temporary and backup files
+kicad/keyboard-backups/
+kicad/freerouting.dsn
+kicad/freerouting.ses
+kicad/temp-freerouting.dsn
+kicad/fp-info-cache
+kicad/keyboard.json
+*.lck
+
+# macOS system files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
