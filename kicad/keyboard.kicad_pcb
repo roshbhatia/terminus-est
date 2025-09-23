@@ -8,9 +8,9 @@
 	)
 	(paper "A2")
 	(title_block
-		(title "Terminus Est")
+		(title "terminus.est")
 		(rev "v0.0.0-alpha")
-		(company "ross.<<corp>>")
+		(company "ROSSCORP")
 	)
 	(layers
 		(0 "F.Cu" signal)
