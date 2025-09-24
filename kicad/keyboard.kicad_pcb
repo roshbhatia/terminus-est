@@ -20965,7 +20965,7 @@
 	(footprint "MountingHole:MountingHole_2.1mm"
 		(layer "F.Cu")
 		(uuid "5fb5801b-54ce-48e2-8d25-de34b1590520")
-		(at 91.5 175.75)
+		(at 92 175.25)
 		(descr "Mounting Hole 2.1mm, no annular")
 		(tags "mounting hole 2.1mm no annular")
 		(property "Reference" "REF**"
@@ -26398,7 +26398,7 @@
 	(footprint "MountingHole:MountingHole_2.1mm"
 		(layer "F.Cu")
 		(uuid "75d8f52f-da3b-4023-bd86-a29d96ef25ca")
-		(at 506.5 176.875)
+		(at 506.5 177.75)
 		(descr "Mounting Hole 2.1mm, no annular")
 		(tags "mounting hole 2.1mm no annular")
 		(property "Reference" "REF**"
@@ -43321,7 +43321,7 @@
 	(footprint "MountingHole:MountingHole_2.1mm"
 		(layer "F.Cu")
 		(uuid "c6a092ba-8428-42b5-80b0-0be1b1b23b7e")
-		(at 92.875 149.625)
+		(at 99.75 150.75)
 		(descr "Mounting Hole 2.1mm, no annular")
 		(tags "mounting hole 2.1mm no annular")
 		(property "Reference" "REF**"
@@ -67756,7 +67756,7 @@
 	(footprint "MountingHole:MountingHole_2.1mm"
 		(layer "F.Cu")
 		(uuid "f513214d-cb7b-4d6c-816b-55740f8a0d99")
-		(at 499.75 149.75)
+		(at 496.25 149.75)
 		(descr "Mounting Hole 2.1mm, no annular")
 		(tags "mounting hole 2.1mm no annular")
 		(property "Reference" "REF**"
