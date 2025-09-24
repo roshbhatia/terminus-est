@@ -34,6 +34,9 @@ Talked to @dededecline, she directed me to:
 
 Remaining tasks:
 - Finish routing -- I did this successfully yesterday and got the big check mark from Dani, but I messed up and forgot a whole column. Going to redo them today, and I realized I might as well just use 4 layers instead of 2 for cleanliness.
+- Mounting holes.
 - Grab a graphic from the homie Trevor and use that on the board.
-
+- Generate BOM and send to JCLPCB.
+- Write firmwarre.
+- Figure out case stuff (wait until pcb gets here).
 
