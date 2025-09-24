@@ -24,3 +24,16 @@ To figure out:
 - Throwing a graphic on this bad boy.
 - How the heck (once finished) I can tell JCLPCB to use the right components. 
 - What is the kicad schematic editor used for lol. Seems like it's mentioned in guides but I haven't need to touch it? I just add footbprints from public libraries in the PCB editor itself when I need to? 
+
+### 09/23/2025
+Talked to @dededecline, she directed me to:
+- Go with SMD, bc I don't wanna care about soldering.
+- Diode direction doesn't matter for my current use case, they're all going the same way now.
+- Generate BOM for JCLPCB.
+- No need to use the schematic editor, just use the PCB editor.
+
+Remaining tasks:
+- Finish routing -- I did this successfully yesterday and got the big check mark from Dani, but I messed up and forgot a whole column. Going to redo them today, and I realized I might as well just use 4 layers instead of 2 for cleanliness.
+- Grab a graphic from the homie Trevor and use that on the board.
+
+
