@@ -48,3 +48,4 @@ Ask about the following:
 - Workflow for filling out BOM.
 - Do any MX style switches work with this layout?
 - How to make sure the silkscreen design gets printed?
+- Add ground? dedicated grounding layer? and how not to short out?
