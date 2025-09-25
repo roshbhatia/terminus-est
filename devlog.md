@@ -40,3 +40,9 @@ Remaining tasks:
 - Write firmwarre.
 - Figure out case stuff (wait until pcb gets here).
 
+### 09/24/2025
+Ask about the following:
+- How to make the pcb symettrical?
+- Does the mounting hole placement matter?
+- Make sure I'm choosing the right components.
+- How to make sure the silkscreen design gets printed?
