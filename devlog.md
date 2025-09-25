@@ -45,4 +45,5 @@ Ask about the following:
 - How to make the pcb symettrical?
 - Does the mounting hole placement matter?
 - Make sure I'm choosing the right components.
+- Workflow for filling out BOM.
 - How to make sure the silkscreen design gets printed?
