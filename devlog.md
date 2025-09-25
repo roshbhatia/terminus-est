@@ -42,10 +42,9 @@ Remaining tasks:
 
 ### 09/24/2025
 Ask about the following:
-- How to make the pcb symettrical?
-- Does the mounting hole placement matter?
-- Make sure I'm choosing the right components.
+- How to make the pcb symettrical? -- draw straight lines
+- Does the mounting hole placement matter? -- delete the holes
 - Workflow for filling out BOM.
-- Do any MX style switches work with this layout?
-- How to make sure the silkscreen design gets printed?
-- Add ground? dedicated grounding layer? and how not to short out?
+- Make sure I'm choosing the right components.
+- How to make sure the silkscreen design gets printed? -- excluded the vioaltions
+- Add ground? dedicated grounding layer? and how not to short out? -- no ground layer, no dedicatede ground pour, can leave ground pins unconnected
