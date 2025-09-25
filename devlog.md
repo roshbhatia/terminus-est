@@ -46,4 +46,5 @@ Ask about the following:
 - Does the mounting hole placement matter?
 - Make sure I'm choosing the right components.
 - Workflow for filling out BOM.
+- Do any MX style switches work with this layout?
 - How to make sure the silkscreen design gets printed?
