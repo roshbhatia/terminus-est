@@ -3,17 +3,18 @@
 > Resolution and a plan are better than a sword, because a man whets his own edges on them.
 > > Gene Wolfe - The Citadel of the Autarch
 
-![layout](./layout/keyboard-layout.png)
+![pcb](./assets/pcb.png)
+![layout](./assets/keyboard-layout.png)
 
 ## Background 
 Terminus Est is a ergo-inspired keyboard tuned to my developer workflow.
 I've tended to cluster my actions around vim-inpsired keybindings with discrete "leader" keys, and started to wish that my leader keys were a bit easier to hit.
 
+This project was frustratingly complicated, too expensive, and ultimately worse than my perfectly fine, working keyboards. But it's worth it to build something cool.
+
 ## Key Features
 - Split design for comfortability.
-- Some mirrored center keys for ultimate flexibility.
 - Thumb clustered "leader" keys.
-- Additional `<Esc>` and `<Space>` placements for additional ease-of-use.
 
 ## Pinout
 ```csv
@@ -59,8 +60,3 @@ PinNumber,Side,Type,Assignment
 39,Right,VBUS,None
 40,Right,VSYS,None
 ```
-
-## Built With...
-- https://keyboard-layout-editor.com (used for `./layout`)
-- https://kbplate.ai03.com (used for ./plate)
-- https://kbfirmware.com 
