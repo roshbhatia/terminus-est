@@ -42,9 +42,23 @@ Remaining tasks:
 
 ### 09/24/2025
 Ask about the following:
-- How to make the pcb symettrical? -- draw straight lines
-- Does the mounting hole placement matter? -- delete the holes
+- How to make the pcb symettrical? 
+- Does the mounting hole placement matter? 
 - Workflow for filling out BOM.
 - Make sure I'm choosing the right components.
-- How to make sure the silkscreen design gets printed? -- excluded the vioaltions
-- Add ground? dedicated grounding layer? and how not to short out? -- no ground layer, no dedicatede ground pour, can leave ground pins unconnected
+- How to make sure the silkscreen design gets printed? 
+- Add ground? dedicated grounding layer? and how not to short out? 
+
+Got answers from Dani:
+- Don't worry about that, draw straight lines.
+- Delete the holes, silly.
+- I just ended up using a plugin that was available in Kicad.
+- Site helps you choose.
+- Exclude the violations.
+- No ground layer || dedicated pour needed and I can leave the ground pins unconnected.
+
+### 09/25/2025
+
+- Fixed up the pcb, ordered. Expensive! Messed up the silkscreen logo on the back lol but I'm keeping it in as a fun quirk.
+- Made a plate, @kh3dron helped me actually fix it up in fusion 360 because I couldn't figure out the software. By fix it up he did it all.
+- For switches, taking the glorious pandas that were in my keychron. For keycaps, found some blank PBT keycaps on amazon I liked.
