@@ -5,7 +5,7 @@
 
 ![pcb](./assets/pcb.png)
 ![layout](./assets/keyboard-layout.png)
-![plate](./assets/.png)
+![plate](./assets/plate.png)
 
 ## Background 
 Terminus Est is a ergo-inspired keyboard tuned to my developer workflow.
