@@ -1,8 +1,6 @@
 # Devlog
 
-## Learning things
-
-## Findings up to log
+### Findings up to log
 
 So far I've:
 - Gone through a bunch of keyboard designs on KLE. Realized ergogen might have been the thing to start with, but for this build I'll stick with KLE.
