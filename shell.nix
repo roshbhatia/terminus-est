@@ -1,5 +1,7 @@
 {
-  pkgs ? import <nixpkgs> { },
+  pkgs ? import <nixpkgs> {
+    config.allowUnsupportedSystem = true;
+  },
 }:
 
 pkgs.mkShell {
@@ -7,10 +9,8 @@ pkgs.mkShell {
     qmk
 
     gcc-arm-embedded
-    avr-gcc
-    avr-binutils
-    avr-libc
-    avrlibc
+    (if stdenv.isDarwin then pkgsCross.avr.buildPackages.gcc else avr-gcc)
+    (if stdenv.isDarwin then pkgsCross.avr.avrlibc else avrlibc)
     avrdude
 
     gnumake
@@ -28,19 +28,12 @@ pkgs.mkShell {
   ];
 
   shellHook = ''
-    echo "QMK development environment loaded!"
-    echo "Available tools:"
-    echo "  qmk --version: $(qmk --version)"
-    echo "  avr-gcc --version: $(avr-gcc --version | head -1)"
-    echo "  arm-none-eabi-gcc --version: $(arm-none-eabi-gcc --version | head -1)"
-    echo ""
-    echo "To set up QMK in this directory:"
-    echo "  qmk setup -H ."
-    echo ""
-    echo "To initialize submodules if you have an existing QMK repo:"
-    echo "  git submodule update --init --recursive"
+    echo "qmk --version: $(qmk --version)"
+    echo "avr-gcc --version: $(avr-gcc --version | head -1)"
+    echo "arm-none-eabi-gcc --version: $(arm-none-eabi-gcc --version | head -1)"
   '';
 
-  QMK_HOME = "$PWD";
-  PYTHONPATH = "$PWD/lib/python";
+  QMK_HOME = "$PWD/qmk_firmware";
+  PYTHONPATH = "$QMK_HOME/lib/python";
+  QMK_CONFIG = "$PWD/qmk_config";
 }
