@@ -31,9 +31,9 @@ pkgs.mkShell {
     echo "qmk --version: $(qmk --version)"
     echo "avr-gcc --version: $(avr-gcc --version | head -1)"
     echo "arm-none-eabi-gcc --version: $(arm-none-eabi-gcc --version | head -1)"
+    export QMK_HOME = "$(pwd)/qmk_firmware";
+    export PYTHONPATH = "$(pwd)/qmk_firmware/lib/python";
+    export QMK_CONFIG = "$(pwd)/qmk_config";
   '';
 
-  QMK_HOME = "$PWD/qmk_firmware";
-  PYTHONPATH = "$QMK_HOME/lib/python";
-  QMK_CONFIG = "$PWD/qmk_config";
 }
