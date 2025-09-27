@@ -17,3 +17,6 @@ kicad/keyboard.json
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+!.envrc
+!shell.nix
