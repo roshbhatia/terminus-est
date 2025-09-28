@@ -1,0 +1,74 @@
+version: '3'
+
+vars:
+  QMK_HOME: ./firmware/qmk_firmware
+  KEYBOARD: kb
+  KEYMAP: default
+
+tasks:
+  firmware:compile:
+    desc: Compile the QMK firmware for Terminus Est
+    dir: '{{.QMK_HOME}}'
+    cmds:
+      - qmk compile -kb {{.KEYBOARD}} -km {{.KEYMAP}}
+    sources:
+      - keyboards/{{.KEYBOARD}}/**/*
+    generates:
+      - .build/{{.KEYBOARD}}_{{.KEYMAP}}.uf2
+
+  firmware:test:
+    desc: Test the firmware configuration without flashing
+    dir: '{{.QMK_HOME}}'
+    cmds:
+      - qmk doctor
+      - qmk config user.keyboard={{.KEYBOARD}}
+      - qmk config user.keymap={{.KEYMAP}}
+      - qmk compile -kb {{.KEYBOARD}} -km {{.KEYMAP}} --clean
+    preconditions:
+      - sh: command -v qmk
+        msg: "QMK CLI is not installed. Install with: pip3 install qmk"
+
+  firmware:flash:
+    desc: Flash the firmware to the RP2040 (requires bootloader mode)
+    dir: '{{.QMK_HOME}}'
+    deps: [firmware:compile]
+    cmds:
+      - |
+        echo "Put your RP2040 into bootloader mode (double-tap reset or hold boot + press reset)"
+        echo "Waiting for RP2040 to be detected..."
+        qmk flash -kb {{.KEYBOARD}} -km {{.KEYMAP}}
+    preconditions:
+      - sh: command -v qmk
+        msg: "QMK CLI is not installed. Install with: pip3 install qmk"
+
+  firmware:clean:
+    desc: Clean build artifacts
+    dir: '{{.QMK_HOME}}'
+    cmds:
+      - qmk clean
+      - rm -rf .build/{{.KEYBOARD}}_*
+
+  firmware:setup:
+    desc: Setup QMK development environment
+    cmds:
+      - |
+        if ! command -v qmk &> /dev/null; then
+          echo "Installing QMK CLI..."
+          pip3 install qmk
+        fi
+      - cd {{.QMK_HOME}} && qmk setup
+      - qmk config user.keyboard={{.KEYBOARD}}
+      - qmk config user.keymap={{.KEYMAP}}
+
+  firmware:info:
+    desc: Show keyboard information
+    dir: '{{.QMK_HOME}}'
+    cmds:
+      - qmk info -kb {{.KEYBOARD}}
+
+  firmware:lint:
+    desc: Check firmware code for style and errors
+    dir: '{{.QMK_HOME}}'
+    cmds:
+      - qmk doctor
+      - qmk lint -kb {{.KEYBOARD}} -km {{.KEYMAP}}

@@ -7,17 +7,17 @@
 #define VENDOR_ID       0xFEED
 #define PRODUCT_ID      0x6060
 #define DEVICE_VER      0x0001
-#define MANUFACTURER    qmkbuilder
-#define PRODUCT         keyboard
-#define DESCRIPTION     Keyboard
+#define MANUFACTURER    roshbhatia
+#define PRODUCT         terminus-est
+#define DESCRIPTION     Terminus Est Split Keyboard
 
 /* key matrix size */
 #define MATRIX_ROWS 6
-#define MATRIX_COLS 22
+#define MATRIX_COLS 20
 
 /* key matrix pins */
-#define MATRIX_ROW_PINS { B0, B1, B2, B3, B4, B5 }
-#define MATRIX_COL_PINS { B6, B7, C0, C1, C2, C3, C4, C5, C6, C7, D0, D1, D2, D3, D4, D5, D6, D7, E0, E1, E2, E3 }
+#define MATRIX_ROW_PINS { GP10, GP11, GP12, GP13, GP14, GP15 }
+#define MATRIX_COL_PINS { GP0, GP1, GP2, GP3, GP4, GP5, GP6, GP7, GP8, GP9, GP16, GP17, GP18, GP19, GP20, GP21, GP22, GP26, GP27, GP28 }
 #define UNUSED_PINS
 
 /* COL2ROW or ROW2COL */
@@ -45,6 +45,10 @@
 
 /* prevent stuck modifiers */
 #define PREVENT_STUCK_MODIFIERS
+
+/* RP2040-specific settings */
+#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET
+#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_TIMEOUT 200U
 
 
 #ifdef RGB_DI_PIN
