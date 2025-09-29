@@ -3,8 +3,7 @@ version: '3'
 vars:
   ZMK_HOME: ./firmware
   BOARD: sparkfun_pro_micro_rp2040
-  SHIELD_LEFT: terminus_est_left
-  SHIELD_RIGHT: terminus_est_right
+  SHIELD: terminus_est
 
 tasks:
   firmware:setup:
@@ -21,15 +20,13 @@ tasks:
     desc: Compile the ZMK firmware for Terminus Est
     dir: '{{.ZMK_HOME}}'
     cmds:
-      - west build -s zmk/app -d build/left -b {{.BOARD}} -- -DSHIELD={{.SHIELD_LEFT}} -DZMK_CONFIG="{{.ZMK_HOME}}/config"
-      - west build -s zmk/app -d build/right -b {{.BOARD}} -- -DSHIELD={{.SHIELD_RIGHT}} -DZMK_CONFIG="{{.ZMK_HOME}}/config"
+      - west build -s zmk/app -d build -b {{.BOARD}} -- -DSHIELD={{.SHIELD}} -DZMK_CONFIG="/Users/rshnbhatia/github/personal/roshbhatia/terminus-est/firmware/config"
 
   firmware:test:
     desc: Test the firmware configuration without flashing
     dir: '{{.ZMK_HOME}}'
     cmds:
-      - west build -s zmk/app -d build/left -b {{.BOARD}} --pristine -- -DSHIELD={{.SHIELD_LEFT}} -DZMK_CONFIG="{{.ZMK_HOME}}/config"
-      - west build -s zmk/app -d build/right -b {{.BOARD}} --pristine -- -DSHIELD={{.SHIELD_RIGHT}} -DZMK_CONFIG="{{.ZMK_HOME}}/config"
+      - west build -s zmk/app -d build -b {{.BOARD}} --pristine -- -DSHIELD={{.SHIELD}} -DZMK_CONFIG="/Users/rshnbhatia/github/personal/roshbhatia/terminus-est/firmware/config"
 
   firmware:clean:
     desc: Clean build artifacts

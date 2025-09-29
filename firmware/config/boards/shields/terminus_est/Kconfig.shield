@@ -1,6 +1,9 @@
 # Copyright (c) 2024 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 
+config SHIELD_TERMINUS_EST
+	def_bool $(shields_list_contains,terminus_est)
+
 config SHIELD_TERMINUS_EST_LEFT
 	def_bool $(shields_list_contains,terminus_est_left)
 
