@@ -1,0 +1,11 @@
+file_format: "1"
+id: terminus_est
+name: Terminus Est
+type: shield
+url: https://github.com/roshbhatia/terminus-est
+requires: [pro_micro]
+features:
+  - keys
+siblings:
+  - terminus_est_left
+  - terminus_est_right

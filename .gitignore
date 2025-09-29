@@ -1,5 +1,15 @@
 .task/
 
+# ZMK build artifacts and dependencies
+firmware/build/
+firmware/.west/
+firmware/zephyr/
+firmware/zmk/
+firmware/modules/
+firmware/tools/
+firmware/bootloader/
+*.uf2
+
 # KiCad temporary and backup files
 kicad/keyboard-backups/
 kicad/freerouting.dsn

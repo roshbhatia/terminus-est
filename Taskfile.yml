@@ -1,74 +1,48 @@
 version: '3'
 
 vars:
-  QMK_HOME: ./firmware/qmk_firmware
-  KEYBOARD: kb
-  KEYMAP: default
+  ZMK_HOME: ./firmware
+  BOARD: sparkfun_pro_micro_rp2040
+  SHIELD_LEFT: terminus_est_left
+  SHIELD_RIGHT: terminus_est_right
 
 tasks:
-  firmware:compile:
-    desc: Compile the QMK firmware for Terminus Est
-    dir: '{{.QMK_HOME}}'
+  firmware:setup:
+    desc: Setup ZMK development environment
+    dir: '{{.ZMK_HOME}}'
     cmds:
-      - qmk compile -kb {{.KEYBOARD}} -km {{.KEYMAP}}
-    sources:
-      - keyboards/{{.KEYBOARD}}/**/*
-    generates:
-      - .build/{{.KEYBOARD}}_{{.KEYMAP}}.uf2
+      - echo "Setting up ZMK development environment..."
+      - west init -l config
+      - west update
+      - west zephyr-export
+      - echo "ZMK setup complete!"
+
+  firmware:compile:
+    desc: Compile the ZMK firmware for Terminus Est
+    dir: '{{.ZMK_HOME}}'
+    cmds:
+      - west build -s zmk/app -d build/left -b {{.BOARD}} -- -DSHIELD={{.SHIELD_LEFT}} -DZMK_CONFIG="{{.ZMK_HOME}}/config"
+      - west build -s zmk/app -d build/right -b {{.BOARD}} -- -DSHIELD={{.SHIELD_RIGHT}} -DZMK_CONFIG="{{.ZMK_HOME}}/config"
 
   firmware:test:
     desc: Test the firmware configuration without flashing
-    dir: '{{.QMK_HOME}}'
+    dir: '{{.ZMK_HOME}}'
     cmds:
-      - qmk doctor
-      - qmk config user.keyboard={{.KEYBOARD}}
-      - qmk config user.keymap={{.KEYMAP}}
-      - qmk compile -kb {{.KEYBOARD}} -km {{.KEYMAP}} --clean
-    preconditions:
-      - sh: command -v qmk
-        msg: "QMK CLI is not installed. Install with: pip3 install qmk"
-
-  firmware:flash:
-    desc: Flash the firmware to the RP2040 (requires bootloader mode)
-    dir: '{{.QMK_HOME}}'
-    deps: [firmware:compile]
-    cmds:
-      - |
-        echo "Put your RP2040 into bootloader mode (double-tap reset or hold boot + press reset)"
-        echo "Waiting for RP2040 to be detected..."
-        qmk flash -kb {{.KEYBOARD}} -km {{.KEYMAP}}
-    preconditions:
-      - sh: command -v qmk
-        msg: "QMK CLI is not installed. Install with: pip3 install qmk"
+      - west build -s zmk/app -d build/left -b {{.BOARD}} --pristine -- -DSHIELD={{.SHIELD_LEFT}} -DZMK_CONFIG="{{.ZMK_HOME}}/config"
+      - west build -s zmk/app -d build/right -b {{.BOARD}} --pristine -- -DSHIELD={{.SHIELD_RIGHT}} -DZMK_CONFIG="{{.ZMK_HOME}}/config"
 
   firmware:clean:
     desc: Clean build artifacts
-    dir: '{{.QMK_HOME}}'
+    dir: '{{.ZMK_HOME}}'
     cmds:
-      - qmk clean
-      - rm -rf .build/{{.KEYBOARD}}_*
-
-  firmware:setup:
-    desc: Setup QMK development environment
-    cmds:
-      - |
-        if ! command -v qmk &> /dev/null; then
-          echo "Installing QMK CLI..."
-          pip3 install qmk
-        fi
-      - cd {{.QMK_HOME}} && qmk setup
-      - qmk config user.keyboard={{.KEYBOARD}}
-      - qmk config user.keymap={{.KEYMAP}}
+      - rm -rf build/
+      - rm -f *.uf2
 
   firmware:info:
     desc: Show keyboard information
-    dir: '{{.QMK_HOME}}'
+    dir: '{{.ZMK_HOME}}'
     cmds:
-      - qmk info -kb {{.KEYBOARD}}
-
-  firmware:lint:
-    desc: Check firmware code for style and errors
-    dir: '{{.QMK_HOME}}'
-    cmds:
-      - qmk doctor
-      - qmk lint -kb {{.KEYBOARD}} -km {{.KEYMAP}}
+      - echo "ZMK Terminus Est Configuration"
+      - echo "Left shield {{.SHIELD_LEFT}}"
+      - echo "Right shield {{.SHIELD_RIGHT}}"
+      - echo "Board {{.BOARD}}"

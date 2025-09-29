@@ -1,0 +1,5 @@
+// Nice Nano v2 specific configuration for Terminus Est
+
+&pro_micro_i2c {
+    status = "okay";
+};
