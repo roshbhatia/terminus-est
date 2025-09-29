@@ -12,12 +12,15 @@ firmware/bootloader/
 
 # KiCad temporary and backup files
 kicad/keyboard-backups/
+kicad/fabrication-toolkit-options.json
 kicad/freerouting.dsn
 kicad/freerouting.ses
 kicad/temp-freerouting.dsn
 kicad/fp-info-cache
 kicad/keyboard.json
 *.lck
+
+jclpcb/backups/
 
 # macOS system files
 .DS_Store
