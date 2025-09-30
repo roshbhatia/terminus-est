@@ -1,5 +1,0 @@
-# This file generates the GitHub Actions matrix
-# For simple single-board keyboards, remove the matrix entries for other boards
-include:
-  - board: rpi_pico
-    shield: terminus_est

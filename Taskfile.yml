@@ -1,45 +1,14 @@
 # yaml-language-server: $schema=https://taskfile.dev/schema.json
 version: '3'
 
-vars:
-  ZMK_HOME: ./firmware
-  BOARD: rpi_pico
-  SHIELD: terminus_est
-
 tasks:
-  setup:
-    desc: Setup ZMK development environment
-    dir: '{{.ZMK_HOME}}'
-    cmds:
-      - echo "Setting up ZMK development environment..."
-      - test -d .west || west init -l config
-      - west update
-      - west zephyr-export
-      - echo "ZMK setup complete!"
-
   compile:
-    desc: Compile the ZMK firmware for Terminus Est
-    dir: '{{.ZMK_HOME}}'
+    desc: Compile terminus-est firmware
     cmds:
-      - west build -s zmk/app -d build -b {{.BOARD}} -- -DSHIELD={{.SHIELD}} -DZMK_CONFIG="/Users/rshnbhatia/github/personal/roshbhatia/terminus-est/firmware/config"
+      - qmk compile -kb roshbhatia/terminus-est -km default
 
-  test:
-    desc: Test the firmware configuration without flashing
-    dir: '{{.ZMK_HOME}}'
+  flash:
+    desc: Flash terminus-est firmware
     cmds:
-      - west build -s zmk/app -d build -b {{.BOARD}} --pristine -- -DSHIELD={{.SHIELD}} -DZMK_CONFIG="/Users/rshnbhatia/github/personal/roshbhatia/terminus-est/firmware/config"
+      - qmk flash -kb roshbhatia/terminus-est -km default
 
-  clean:
-    desc: Clean build artifacts
-    dir: '{{.ZMK_HOME}}'
-    cmds:
-      - rm -rf build/
-      - rm -f *.uf2
-
-  info:
-    desc: Show keyboard information
-    dir: '{{.ZMK_HOME}}'
-    cmds:
-      - echo "ZMK Terminus Est Configuration"
-      - echo "Shield {{.SHIELD}}"
-      - echo "Board {{.BOARD}}"

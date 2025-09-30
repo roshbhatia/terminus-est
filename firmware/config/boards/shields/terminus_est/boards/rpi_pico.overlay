@@ -1,5 +1,0 @@
-// Raspberry Pi Pico specific configuration for Terminus Est
-
-&i2c0 {
-    status = "okay";
-};
