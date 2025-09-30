@@ -11,7 +11,7 @@ tasks:
     dir: '{{.ZMK_HOME}}'
     cmds:
       - echo "Setting up ZMK development environment..."
-      - west init -l config
+      - test -d .west || west init -l config
       - west update
       - west zephyr-export
       - echo "ZMK setup complete!"
@@ -40,6 +40,5 @@ tasks:
     dir: '{{.ZMK_HOME}}'
     cmds:
       - echo "ZMK Terminus Est Configuration"
-      - echo "Left shield {{.SHIELD_LEFT}}"
-      - echo "Right shield {{.SHIELD_RIGHT}}"
+      - echo "Shield {{.SHIELD}}"
       - echo "Board {{.BOARD}}"
