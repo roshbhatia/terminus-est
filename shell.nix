@@ -12,9 +12,9 @@ pkgs.mkShell {
   shellHook = ''
     echo "Validating dependencies..."
 
-    if ! qmk doctor >/dev/null 2>&1 || [ ! -d "./qmk_firmware" ]; then
+    if ! qmk --config-file doctor >/dev/null 2>&1 || [ ! -d "./qmk_firmware" ]; then
       echo "Running qmk setup..."
-      qmk setup
+      qmk --config-file setup
     fi
   '';
 }
