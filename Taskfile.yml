@@ -7,7 +7,7 @@ vars:
   SHIELD: terminus_est
 
 tasks:
-  firmware:setup:
+  setup:
     desc: Setup ZMK development environment
     dir: '{{.ZMK_HOME}}'
     cmds:
@@ -17,26 +17,26 @@ tasks:
       - west zephyr-export
       - echo "ZMK setup complete!"
 
-  firmware:compile:
+  compile:
     desc: Compile the ZMK firmware for Terminus Est
     dir: '{{.ZMK_HOME}}'
     cmds:
       - west build -s zmk/app -d build -b {{.BOARD}} -- -DSHIELD={{.SHIELD}} -DZMK_CONFIG="/Users/rshnbhatia/github/personal/roshbhatia/terminus-est/firmware/config"
 
-  firmware:test:
+  test:
     desc: Test the firmware configuration without flashing
     dir: '{{.ZMK_HOME}}'
     cmds:
       - west build -s zmk/app -d build -b {{.BOARD}} --pristine -- -DSHIELD={{.SHIELD}} -DZMK_CONFIG="/Users/rshnbhatia/github/personal/roshbhatia/terminus-est/firmware/config"
 
-  firmware:clean:
+  clean:
     desc: Clean build artifacts
     dir: '{{.ZMK_HOME}}'
     cmds:
       - rm -rf build/
       - rm -f *.uf2
 
-  firmware:info:
+  info:
     desc: Show keyboard information
     dir: '{{.ZMK_HOME}}'
     cmds:
