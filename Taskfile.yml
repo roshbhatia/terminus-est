@@ -3,7 +3,7 @@ version: '3'
 
 vars:
   ZMK_HOME: ./firmware
-  BOARD: sparkfun_pro_micro_rp2040
+  BOARD: rpi_pico
   SHIELD: terminus_est
 
 tasks:
