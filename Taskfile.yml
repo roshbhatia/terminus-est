@@ -5,10 +5,10 @@ tasks:
   compile:
     desc: Compile terminus-est firmware
     cmds:
-      - qmk compile -kb roshbhatia/terminus-est -km default
+      - qmk compile
 
   flash:
     desc: Flash terminus-est firmware
     cmds:
-      - qmk flash -kb roshbhatia/terminus-est -km default
+      - qmk flash
 
