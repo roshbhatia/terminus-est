@@ -1,3 +1,6 @@
 [submodule "qmk_firmware"]
 	path = qmk_firmware
 	url = https://github.com/qmk/qmk_firmware.git
+[submodule "zmk-config-terminus-est"]
+	path = zmk-config-terminus-est
+	url = https://github.com/roshbhatia/zmk-config-terminus-est.git
