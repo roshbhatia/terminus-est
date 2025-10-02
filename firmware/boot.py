@@ -1,6 +1,4 @@
-import supervisor
 import usb_hid
-import storage
 
 usb_hid.enable(
     (
