@@ -104,6 +104,11 @@ tasks:
         screen $DEVICE 115200
 
   python:fmt:
-    desc: Format Python code with black (excludes firmware/kmk)
+    desc: Format Python code with black (excludes firmware/kmk and .venv)
     cmds:
-      - black --exclude "firmware/kmk" .
+      - black --exclude "/(firmware/kmk|\.venv)/" .
+
+  plate:parse:
+    desc: Run plate measurement parser
+    cmds:
+      - uv run plate/parse-measurements.py

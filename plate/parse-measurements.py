@@ -10,7 +10,7 @@ import numpy as np
 import sys
 
 # Load the STL file
-stl_file = sys.argv[1] if len(sys.argv) > 1 else 'plate.stl'
+stl_file = sys.argv[1] if len(sys.argv) > 1 else "plate.stl"
 
 print(f"Loading {stl_file}...")
 your_mesh = mesh.Mesh.from_file(stl_file)
