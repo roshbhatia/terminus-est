@@ -1,0 +1,104 @@
+version: '3'
+
+vars:
+  CIRCUITPY_MOUNT: '{{default "/Volumes/CIRCUITPY" .CIRCUITPY_MOUNT}}'
+  BOOTSEL_MOUNT: '{{default "/Volumes/RPI-RP2" .BOOTSEL_MOUNT}}'
+  CIRCUITPY_VERSION: '9.2.1'
+  CIRCUITPY_URL: 'https://downloads.circuitpython.org/bin/raspberry_pi_pico/en_US/adafruit-circuitpython-raspberry_pi_pico-en_US-{{.CIRCUITPY_VERSION}}.uf2'
+
+tasks:
+  firmware:setup:
+    desc: Complete firmware setup (CircuitPython + KMK + config)
+    cmds:
+      - task: firmware:install-circuitpython
+      - echo "Waiting for CIRCUITPY drive to mount..."
+      - sleep 3
+      - task: firmware:install-kmk
+      - task: firmware:flash
+
+  firmware:install-circuitpython:
+    desc: Download and install CircuitPython on Pi Pico
+    cmds:
+      - |
+        echo "Downloading CircuitPython {{.CIRCUITPY_VERSION}}..."
+        if [ ! -f "/tmp/circuitpython.uf2" ]; then
+          curl -L {{.CIRCUITPY_URL}} -o /tmp/circuitpython.uf2
+        fi
+      - |
+        echo "Waiting for Pi Pico in BOOTSEL mode..."
+        echo "Please hold BOOTSEL button and plug in the Pico if not already connected"
+        while [ ! -d "{{.BOOTSEL_MOUNT}}" ]; do
+          sleep 1
+        done
+        echo "BOOTSEL drive detected!"
+      - |
+        echo "Copying CircuitPython to Pi Pico..."
+        cp /tmp/circuitpython.uf2 {{.BOOTSEL_MOUNT}}/
+        echo "CircuitPython installed! Pico will reboot automatically."
+
+  firmware:install-kmk:
+    desc: Install KMK firmware library to CIRCUITPY drive
+    cmds:
+      - |
+        echo "Checking for CIRCUITPY drive..."
+        while [ ! -d "{{.CIRCUITPY_MOUNT}}" ]; do
+          echo "Waiting for CIRCUITPY drive to mount..."
+          sleep 1
+        done
+      - |
+        echo "Initializing KMK submodule..."
+        git submodule update --init --recursive firmware/kmk
+      - |
+        echo "Copying KMK to CIRCUITPY drive..."
+        if [ -d "{{.CIRCUITPY_MOUNT}}/kmk" ]; then
+          rm -rf {{.CIRCUITPY_MOUNT}}/kmk
+        fi
+        cp -r firmware/kmk/kmk {{.CIRCUITPY_MOUNT}}/
+        echo "KMK installed successfully!"
+
+  firmware:flash:
+    desc: Copy firmware configuration to CIRCUITPY drive
+    cmds:
+      - |
+        echo "Checking for CIRCUITPY drive..."
+        if [ ! -d "{{.CIRCUITPY_MOUNT}}" ]; then
+          echo "Error: CIRCUITPY drive not found at {{.CIRCUITPY_MOUNT}}"
+          exit 1
+        fi
+      - |
+        echo "Copying firmware files..."
+        cp firmware/boot.py {{.CIRCUITPY_MOUNT}}/
+        cp firmware/main.py {{.CIRCUITPY_MOUNT}}/
+        echo "Firmware flashed successfully!"
+        echo "Keyboard will restart automatically."
+
+  firmware:clean:
+    desc: Remove all files from CIRCUITPY drive
+    cmds:
+      - |
+        if [ ! -d "{{.CIRCUITPY_MOUNT}}" ]; then
+          echo "Error: CIRCUITPY drive not found"
+          exit 1
+        fi
+        echo "Cleaning CIRCUITPY drive..."
+        rm -rf {{.CIRCUITPY_MOUNT}}/*
+        echo "Drive cleaned!"
+
+  firmware:update-kmk:
+    desc: Update KMK submodule to latest version
+    cmds:
+      - git submodule update --remote firmware/kmk
+      - echo "KMK updated to latest version"
+      - echo "Run 'task firmware:install-kmk' to install updated version"
+
+  firmware:console:
+    desc: Connect to CircuitPython serial console
+    cmds:
+      - |
+        DEVICE=$(ls /dev/tty.usbmodem* 2>/dev/null | head -n1)
+        if [ -z "$DEVICE" ]; then
+          echo "Error: No CircuitPython device found"
+          exit 1
+        fi
+        echo "Connecting to $DEVICE (Ctrl+C to exit)..."
+        screen $DEVICE 115200
