@@ -1,6 +1,18 @@
 .task/
 
-# ZMK build artifacts and dependencies
+# Firmware artifacts
+# KMK (don't commit the KMK library itself, only our config)
+firmware/kmk/
+firmware/lib/
+*.uf2
+
+# CircuitPython
+firmware/.Trashes
+firmware/.metadata_never_index
+firmware/.fseventsd
+firmware/settings.toml
+
+# ZMK build artifacts (legacy, keeping for reference)
 firmware/build/
 firmware/.west/
 firmware/zephyr/
@@ -8,7 +20,6 @@ firmware/zmk/
 firmware/modules/
 firmware/tools/
 firmware/bootloader/
-*.uf2
 
 # KiCad temporary and backup files
 pcb/kicad/keyboard-backups/
