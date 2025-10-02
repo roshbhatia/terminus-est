@@ -11,6 +11,11 @@ firmware/.metadata_never_index
 firmware/.fseventsd
 firmware/settings.toml
 
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
 # ZMK build artifacts (legacy, keeping for reference)
 firmware/build/
 firmware/.west/
