@@ -4,8 +4,9 @@
 > > Gene Wolfe - The Citadel of the Autarch
 
 ![pcb](./assets/pcb.png)
-![layout](./assets/keyboard-layout.png)
+![layout](./assets/layout.png)
 ![plate](./assets/plate.png)
+![case](./assets/case.png)
 
 ## Background 
 Terminus Est is a ergo-inspired keyboard tuned to my developer workflow.

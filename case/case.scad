@@ -27,7 +27,7 @@ fb_wall_top_clearance = -2.5;
 side_wall_offset = 0;
 side_wall_bottom_z = -7.5;
 side_wall_top_z = 10;
-side_wall_lip_width = 4;
+side_wall_lip_width = 3;
 side_wall_lip_height = 2.5;
 side_wall_lip_start_z = 7.5;
 side_wall_lip_inset = 1;
@@ -39,10 +39,14 @@ usb_cutout_z_bottom = -12;
 usb_cutout_height = 300;
 usb_cutout_depth = 600; // Long cutout extending through case
 
+// Rounding parameters
+corner_radius = 3;
+
+// Plate STL file
+plate_stl_file = "../plate/plate.stl";
+
 // Small overlap to prevent gaps in union
 overlap = 0.01;
-
-// ===== MODULES =====
 
 module complete_case() {
     // Calculate shared dimensions
@@ -124,6 +128,10 @@ module complete_case() {
     }
 }
 
-// ===== RENDER =====
 
+color("dimgray")
 complete_case();
+
+color("silver")
+translate([plate_offset_x, plate_offset_y, plate_offset_z])
+import(plate_stl_file);
