@@ -102,3 +102,8 @@ tasks:
         fi
         echo "Connecting to $DEVICE (Ctrl+C to exit)..."
         screen $DEVICE 115200
+
+  python:fmt:
+    desc: Format Python code with black (excludes firmware/kmk)
+    cmds:
+      - black --exclude "firmware/kmk" .
