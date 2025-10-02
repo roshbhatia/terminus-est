@@ -111,4 +111,4 @@ tasks:
   plate:parse:
     desc: Run plate measurement parser
     cmds:
-      - uv run plate/parse-measurements.py
+      - uv run plate/parse-measurements.py ./plate/plate.stl
