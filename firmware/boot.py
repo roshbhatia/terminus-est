@@ -4,5 +4,6 @@ usb_hid.enable(
     (
         usb_hid.Device.KEYBOARD,
         usb_hid.Device.CONSUMER_CONTROL,
+        usb_hid.Device.MOUSE,
     )
 )

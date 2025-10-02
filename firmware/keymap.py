@@ -187,16 +187,16 @@ FN_R1 = [
     KC.TRNS,  # C6
     KC.TRNS,  # C7
     KC.TRNS,  # C8
-    KC.RESET,  # C9
+    KC.RESET,  # C9 - Reset to bootloader
     KC.TRNS,  # C10
     KC.TRNS,  # C11
-    KC.RESET,  # C12
+    KC.RESET,  # C12 - Reset to bootloader
     KC.TRNS,  # C13
     KC.TRNS,  # C14
-    KC.TRNS,  # C15
+    KC.VOLU,  # C15 - Volume up
     KC.TRNS,  # C16
     KC.TRNS,  # C17
-    KC.MPLY,  # C18
+    KC.MPLY,  # C18 - Play/Pause
     KC.TRNS,  # C19
     KC.TRNS,  # C20
     KC.TRNS,  # C21
@@ -207,8 +207,8 @@ FN_R2 = [
     KC.TRNS,  # C1
     KC.TRNS,  # C2
     KC.TRNS,  # C3
-    KC.TRNS,  # C4
-    KC.MNXT,  # C5
+    KC.VOLD,  # C4 - Volume down
+    KC.MNXT,  # C5 - Next track
     KC.TRNS,  # C6
     KC.TRNS,  # C7
     KC.TRNS,  # C8
@@ -217,10 +217,10 @@ FN_R2 = [
     KC.TRNS,  # C11
     KC.TRNS,  # C12
     KC.TRNS,  # C13
-    KC.UP,  # C14
-    KC.LEFT,  # C15
-    KC.DOWN,  # C16
-    KC.RGHT,  # C17
+    KC.UP,  # C14 - Arrow up
+    KC.LEFT,  # C15 - Arrow left
+    KC.DOWN,  # C16 - Arrow down
+    KC.RGHT,  # C17 - Arrow right
     KC.TRNS,  # C18
     KC.TRNS,  # C19
     KC.TRNS,  # C20
@@ -228,23 +228,23 @@ FN_R2 = [
 ]
 
 FN_R3 = [
-    KC.TRNS,  # C0
-    KC.TRNS,  # C1
-    KC.TRNS,  # C2
-    KC.TRNS,  # C3
-    KC.TRNS,  # C4
-    KC.TRNS,  # C5
-    KC.TRNS,  # C6
-    KC.MPRV,  # C7
+    KC.TRNS,     # C0
+    KC.TRNS,     # C1
+    KC.TRNS,     # C2
+    KC.TRNS,     # C3
+    KC.TRNS,     # C4
+    KC.MJ_TOGGLE,  # C5 - Toggle mouse jiggler
+    KC.TRNS,     # C6
+    KC.MPRV,     # C7 - Previous track
     KC.TRNS,  # C8
     KC.TRNS,  # C9
     KC.TRNS,  # C10
     KC.TRNS,  # C11
     KC.TRNS,  # C12
     KC.TRNS,  # C13
-    KC.MPRV,  # C14
+    KC.MPRV,  # C14 - Previous track
     KC.TRNS,  # C15
-    KC.TRNS,  # C16
+    KC.MUTE,  # C16 - Toggle mute
     KC.TRNS,  # C17
     KC.TRNS,  # C18
     KC.TRNS,  # C19
