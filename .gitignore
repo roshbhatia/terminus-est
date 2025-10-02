@@ -1,8 +1,7 @@
 .task/
 
 # Firmware artifacts
-# KMK (don't commit the KMK library itself, only our config)
-firmware/kmk/
+# CircuitPython libraries (user-added)
 firmware/lib/
 *.uf2
 
