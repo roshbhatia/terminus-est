@@ -6,8 +6,9 @@
 ---
 
 ## Background
-Terminus Est is a ergo-inspired keyboard tuned to my developer workflow.
+Terminus Est is a ergonomic (but somewhat conventional) split keyboard tuned to my developer workflow.
 I've tended to cluster my actions around vim-inpsired keybindings with discrete "leader" keys, and started to wish that my leader keys were a bit easier to hit.
+Rather than using stabilizers with longer keys, I've decided to use multiple 1U keys in some places, mostly for aesthetics. However, the keymapping may change in the future.
 
 This project was frustratingly complicated, too expensive, and ultimately worse than my perfectly fine, working keyboards. But it's worth it to build something cool.
 
