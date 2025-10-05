@@ -53,38 +53,95 @@ Thanks to @dededecline for the great advice and @kh3dron for making the plate lo
 ## Pinout
 
 ```mermaid
-graph TB
-    subgraph Left["Left Side - Columns & Rows"]
-        L1["GP0 → COL0"]
-        L2["GP1 → COL1"]
-        L3["GP2 → COL2"]
-        L4["GP3 → COL3"]
-        L5["GP4 → COL4"]
-        L6["GP5 → COL5"]
-        L7["GP6 → COL6"]
-        L8["GP7 → COL7"]
-        L9["GP8 → COL8"]
-        L10["GP9 → COL9"]
-        L11["GP10 → ROW0"]
-        L12["GP11 → ROW1"]
-        L13["GP12 → ROW2"]
-        L14["GP13 → ROW3"]
-        L15["GP14 → ROW4"]
-        L16["GP15 → ROW5"]
+graph LR
+    subgraph Columns["Columns"]
+        COL0["COL0"]
+        COL1["COL1"]
+        COL2["COL2"]
+        COL3["COL3"]
+        COL4["COL4"]
+        COL5["COL5"]
+        COL6["COL6"]
+        COL7["COL7"]
+        COL8["COL8"]
+        COL9["COL9"]
+        COL12["COL12"]
+        COL13["COL13"]
+        COL14["COL14"]
+        COL15["COL15"]
+        COL16["COL16"]
+        COL17["COL17"]
+        COL18["COL18"]
+        COL19["COL19"]
+        COL20["COL20"]
+        COL21["COL21"]
     end
 
-    subgraph Right["Right Side - Columns"]
-        R1["GP16 → COL12"]
-        R2["GP17 → COL13"]
-        R3["GP18 → COL14"]
-        R4["GP19 → COL15"]
-        R5["GP20 → COL16"]
-        R6["GP21 → COL17"]
-        R7["GP22 → COL18"]
-        R8["GP26 → COL19"]
-        R9["GP27 → COL20"]
-        R10["GP28 → COL21"]
+    subgraph RPi["Raspberry Pi Pico"]
+        GP0["GP0"]
+        GP1["GP1"]
+        GP2["GP2"]
+        GP3["GP3"]
+        GP4["GP4"]
+        GP5["GP5"]
+        GP6["GP6"]
+        GP7["GP7"]
+        GP8["GP8"]
+        GP9["GP9"]
+        GP10["GP10"]
+        GP11["GP11"]
+        GP12["GP12"]
+        GP13["GP13"]
+        GP14["GP14"]
+        GP15["GP15"]
+        GP16["GP16"]
+        GP17["GP17"]
+        GP18["GP18"]
+        GP19["GP19"]
+        GP20["GP20"]
+        GP21["GP21"]
+        GP22["GP22"]
+        GP26["GP26"]
+        GP27["GP27"]
+        GP28["GP28"]
     end
+
+    subgraph Rows["Rows"]
+        ROW0["ROW0"]
+        ROW1["ROW1"]
+        ROW2["ROW2"]
+        ROW3["ROW3"]
+        ROW4["ROW4"]
+        ROW5["ROW5"]
+    end
+
+    GP0 --> COL0
+    GP1 --> COL1
+    GP2 --> COL2
+    GP3 --> COL3
+    GP4 --> COL4
+    GP5 --> COL5
+    GP6 --> COL6
+    GP7 --> COL7
+    GP8 --> COL8
+    GP9 --> COL9
+    GP16 --> COL12
+    GP17 --> COL13
+    GP18 --> COL14
+    GP19 --> COL15
+    GP20 --> COL16
+    GP21 --> COL17
+    GP22 --> COL18
+    GP26 --> COL19
+    GP27 --> COL20
+    GP28 --> COL21
+
+    GP10 --> ROW0
+    GP11 --> ROW1
+    GP12 --> ROW2
+    GP13 --> ROW3
+    GP14 --> ROW4
+    GP15 --> ROW5
 ```
 
 ---
