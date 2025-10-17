@@ -60,3 +60,7 @@ Got answers from Dani:
 - Fixed up the pcb, ordered. Expensive! Messed up the silkscreen logo on the back lol but I'm keeping it in as a fun quirk.
 - Made a plate, @kh3dron helped me actually fix it up in fusion 360 because I couldn't figure out the software. By fix it up he did it all.
 - For switches, taking the glorious pandas that were in my keychron. For keycaps, found some blank PBT keycaps on amazon I liked.
+
+### 10/16/2025
+
+Everything is here! After looking at the layout a bit and pretending to type, I've realized my layout is a little silly. I'm removing the bottom three keys in the thumb clusters and the bottom two keys on either side of the board (just going to hide them with the plate). I've also decided to reorder the plate, but this time powder coated, along with a 3d printed case that will be nicer to look at.
