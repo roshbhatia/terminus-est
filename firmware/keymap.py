@@ -102,25 +102,25 @@ BASE_R3 = [
 
 BASE_R4 = [
     KC.NO,  # C0
-    KC.LSFT,  # C1
-    KC.LSFT,  # C2
+    KC.NO,  # C1
+    KC.NO,  # C2
     KC.NO,  # C3
     KC.NO,  # C4
-    KC.SPC,  # C5
-    KC.SPC,  # C6
-    KC.SPC,  # C7
+    KC.NO,  # C5
+    KC.NO,  # C6
+    KC.SPC,  # C7 - Left outer space
     KC.NO,  # C8
     KC.NO,  # C9
     KC.NO,  # C10
     KC.NO,  # C11
     KC.NO,  # C12
-    KC.SPC,  # C13
-    KC.SPC,  # C14
-    KC.SPC,  # C15
+    KC.NO,  # C13
+    KC.NO,  # C14
+    KC.SPC,  # C15 - Right outer space
     KC.NO,  # C16
     KC.NO,  # C17
-    KC.ENT,  # C18
-    KC.ENT,  # C19
+    KC.NO,  # C18
+    KC.NO,  # C19
     KC.NO,  # C20
     KC.NO,  # C21
 ]
@@ -132,16 +132,16 @@ BASE_R5 = [
     KC.NO,  # C3
     KC.NO,  # C4
     KC.NO,  # C5
-    KC.SPC,  # C6
-    KC.SPC,  # C7
-    KC.SPC,  # C8
+    KC.NO,  # C6
+    KC.NO,  # C7
+    KC.NO,  # C8
     KC.MO(1),  # C9
     KC.NO,  # C10
     KC.NO,  # C11
     KC.NO,  # C12
-    KC.SPC,  # C13
-    KC.SPC,  # C14
-    KC.SPC,  # C15
+    KC.NO,  # C13
+    KC.NO,  # C14
+    KC.NO,  # C15
     KC.NO,  # C16
     KC.NO,  # C17
     KC.NO,  # C18

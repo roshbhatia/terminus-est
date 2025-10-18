@@ -1,4 +1,17 @@
 [
+  {
+    "backcolor": "#999191",
+    "name": "terminus-est",
+    "author": "roshbhatia",
+    "background": {
+      "name": "ABS WA",
+      "style": "background-image: url('/bg/plastic/abs-wa.jpg');"
+    },
+    "switchMount": "cherry",
+    "switchBrand": "cherry",
+    "switchType": "MX1A-G1xx",
+    "plate": true
+  },
   [
     {
       "x": 0.5
@@ -121,44 +134,26 @@
   ],
   [
     {
+      "x": 5.25
+    },
+    "Space",
+    {
       "x": 1
     },
-    "Shift",
-    "Shift",
-    {
-      "x": 2.25
-    },
-    "Space",
-    "Space",
     "Space",
     {
       "x": 4.75
     },
     "Space",
-    "Space",
-    "Space",
     {
-      "x": 2.25
+      "x": 1
     },
-    "Enter",
-    "Enter"
+    "Space"
   ],
   [
     {
-      "x": 5.5
+      "x": 10.125
     },
-    "Space",
-    "Space",
-    "Space",
-    {
-      "x": 1.625
-    },
-    "Fn",
-    {
-      "x": 1.625
-    },
-    "Space",
-    "Space",
-    "Space"
+    "Fn"
   ]
 ]

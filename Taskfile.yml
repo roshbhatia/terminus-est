@@ -112,3 +112,8 @@ tasks:
     desc: Run plate measurement parser
     cmds:
       - uv run plate/parse-measurements.py ./plate/plate.stl
+
+  plate:generate:
+    desc: Generate plate.scad from keyboard-layout.json
+    cmds:
+      - python3 plate/v2/kle-to-openscad.py
