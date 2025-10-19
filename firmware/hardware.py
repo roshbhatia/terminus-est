@@ -14,14 +14,14 @@ COL_PINS = (
     board.GP9,  # C9
     None,  # C10 (not connected)
     None,  # C11 (not connected)
-    board.GP17,  # C12
-    board.GP18,  # C13
-    board.GP19,  # C14
-    board.GP20,  # C15
-    board.GP21,  # C16
-    board.GP22,  # C17
-    board.GP26,  # C18
-    None,  # C19 (not connected)
+    board.GP16,  # C12
+    board.GP17,  # C13
+    board.GP18,  # C14
+    board.GP19,  # C15
+    board.GP20,  # C16
+    board.GP21,  # C17
+    board.GP22,  # C18
+    board.GP26,  # C19
     board.GP27,  # C20
     board.GP28,  # C21
 )
@@ -31,8 +31,8 @@ ROW_PINS = (
     board.GP11,  # R1
     board.GP12,  # R2
     board.GP13,  # R3
-    board.GP15,  # R4
-    board.GP16,  # R5
+    board.GP14,  # R4
+    board.GP15,  # R5
 )
 
 DIODE_ORIENTATION = DiodeOrientation.COL2ROW
